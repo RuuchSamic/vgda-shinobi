@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kitsune", "Kitsune.csproj", "{5C497A64-A7AF-0EF2-7AFF-9ED9CA359D5D}"
 EndProject
 Global
