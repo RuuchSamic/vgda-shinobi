@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5104511ca6827b3499941824c44b0092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 650
+  m_JumpForce: 800
   m_CrouchSpeed: 0.196
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -807,8 +807,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669988075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.63, y: -0.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.327, y: -3.02, z: 0}
+  m_LocalScale: {x: 0.464, y: 0.464, z: 0.464}
   m_Children:
   - {fileID: 345200447}
   - {fileID: 97793372}
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 669988078}
-  runSpeed: 150
+  runSpeed: 200
 --- !u!1 &694570941
 GameObject:
   m_ObjectHideFlags: 0
