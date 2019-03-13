@@ -13,10 +13,23 @@ public class Teleport : MonoBehaviour
     //
     private void OnCollisionEnter2D(Collision2D collision) // on collision teleport the player
     {
+
         if (collision.gameObject.tag != "Player") // make sure object being collided is not player
         {
+            Transform playerTemp = PlayerManager.getPlayerPosition(); // variable meant to hold the player's original position
+
             PlayerManager.setPlayerPosition(this.transform); // calls the static function of player manager to change
                                                              // the player's position into the position where it collides with
+
+
+
+            if (collision.gameObject.tag == "Enemy") //  if object hit is an enemy
+                                                     // change the enemy's postion to the player's original's position
+            {
+                collision.transform.position = playerTemp.position;
+            }
+
+
         }
 
 

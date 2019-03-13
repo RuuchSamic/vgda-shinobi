@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static  PlayerManager thisInstance;
-    public GameObject playerPos;
+    // this script uses the singleton pattern to ensure that only one instance of this class is made.
+
+    public static  PlayerManager thisInstance; 
+
+    public GameObject playerPos; // holds player object
+
     private void Awake()
     {
         if (thisInstance == null)
@@ -15,9 +19,23 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public static void setPlayerPosition(Transform f)
+  //  void Update()
+   // {
+      //  if (Input.GetMouseButtonDown(0))
+      //  {
+            //Instantiate(projectile, shotPoint.position, transform.rotation);
+      //  }
+    //}
+
+        public static void setPlayerPosition(Transform f) // change player's pos
     {
          thisInstance.playerPos.transform.position = f.position;
+    }
+
+
+    public static Transform getPlayerPosition() // change player's pos
+    {
+        return thisInstance.playerPos.transform;
     }
 
 
