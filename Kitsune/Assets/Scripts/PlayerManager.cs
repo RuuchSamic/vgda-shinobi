@@ -19,13 +19,6 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-  //  void Update()
-   // {
-      //  if (Input.GetMouseButtonDown(0))
-      //  {
-            //Instantiate(projectile, shotPoint.position, transform.rotation);
-      //  }
-    //}
 
         public static void setPlayerPosition(Transform f) // change player's pos
     {
