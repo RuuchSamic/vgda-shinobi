@@ -250,6 +250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTest
       objectReference: {fileID: 0}
+    - target: {fileID: 7949105468977684255, guid: 52d15f551019e45408c050fc4c03f3fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7949105468977684228, guid: 52d15f551019e45408c050fc4c03f3fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,6 +320,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_JumpForce
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949105469204653129, guid: 52d15f551019e45408c050fc4c03f3fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949105469304077514, guid: 52d15f551019e45408c050fc4c03f3fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949105469551582895, guid: 52d15f551019e45408c050fc4c03f3fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949105468239052677, guid: 52d15f551019e45408c050fc4c03f3fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52d15f551019e45408c050fc4c03f3fb, type: 3}
