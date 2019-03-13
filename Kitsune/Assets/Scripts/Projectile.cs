@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour {
 
     public float speed;
     public float lifeTime;
+    //added damage var
+    public float damage = 5f;
 
     public GameObject destroyEffect;
 
@@ -23,4 +25,10 @@ public class Projectile : MonoBehaviour {
         Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider other)
+    {
+        other.gameObject.GetComponent<Health>().TakeDamage(damage);
+    }
+
 }
