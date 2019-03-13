@@ -5,12 +5,13 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-   
+
+
     // NOTE: be sure to set the tag for the player game object and its children as "Player" tag
     // This collision will also check if the shuriken collides with the player itself when teleporting
     // and if you dont set the player's tag to "Player", the player will teleport to itself
     //
+    public GameObject teleProjectile;
     private void OnCollisionEnter2D(Collision2D collision) // on collision teleport the player
     {
 
@@ -29,7 +30,7 @@ public class Teleport : MonoBehaviour
                 collision.transform.position = playerTemp.position;
             }
 
-
+            Destroy(teleProjectile);
         }
 
 

@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3448d6ee0ccc2f488006172b68ae37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleProjectile: {fileID: 1752887594595040}
 --- !u!61 &8046562700013218809
 BoxCollider2D:
   m_ObjectHideFlags: 0
