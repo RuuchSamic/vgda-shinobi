@@ -2,8 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
+    public static PlayerMovement instance;
 
+    private void OnEnable()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+    private void OnDisable()
+    {
+        instance = null;
+    }
+
+    public Transform playerTransform;
     public CharacterController2D controller;
 
     public float runSpeed = 40f;
