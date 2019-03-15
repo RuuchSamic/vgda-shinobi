@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4357941123549890}
   - component: {fileID: 212554583254947686}
-  - component: {fileID: 114571446369043762}
   - component: {fileID: 3632383373562983537}
   - component: {fileID: 8046562700013218809}
   - component: {fileID: 8622655249401583238}
+  - component: {fileID: 4897618603313608812}
   m_Layer: 0
   m_Name: teleportShuriken
   m_TagString: Untagged
@@ -83,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &114571446369043762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752887594595040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58eb3c8912f9c34abf762a4bd43c445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  lifeTime: 0.5
-  destroyEffect: {fileID: 1552524316579070, guid: e0b234f04a0762145be419876409b329,
-    type: 3}
 --- !u!114 &3632383373562983537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +134,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 2.0470815
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -159,3 +143,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4897618603313608812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752887594595040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea08c6701a52494d9cce9d57a80c64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.5
+  velocity: 20
+  destroyEffect: {fileID: 0}

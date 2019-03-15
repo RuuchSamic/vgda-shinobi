@@ -12,11 +12,6 @@ public class Teleport : MonoBehaviour
     // and if you dont set the player's tag to "Player", the player will teleport to itself
     //
     public GameObject teleProjectile;
-    public Vector3 orig;
-    void Awake()
-    {
-       orig = GetComponent<ThrowMechanic>().initialShot;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision) // on collision teleport the player
     {
@@ -28,6 +23,7 @@ public class Teleport : MonoBehaviour
                                                      // change the enemy's postion to the player's original's position
             {
                 collision.transform.position = PlayerMovement.instance.playerTransform.position;//GetComponent<ThrowMechanic>().getinitialShotO; //transform.position;
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
 
             Transform playerTemp = PlayerManager.getPlayerPosition(); // variable meant to hold the player's original position
