@@ -16,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Player
+  - CameraConfine
+  - Enemy
   - 
   - 
   - 

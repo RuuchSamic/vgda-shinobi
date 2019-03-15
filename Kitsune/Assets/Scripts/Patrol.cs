@@ -17,8 +17,11 @@ public class Patrol : MonoBehaviour
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
+
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
         RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, 0);
+
+        Debug.DrawRay(groundDetection.position, Vector2.right, Color.red, distance);
 
         if (groundInfo.collider == false || wallInfo.collider == true)
         {
@@ -37,6 +40,26 @@ public class Patrol : MonoBehaviour
 
 
         }
+
+        /**
+        void OnCollisionEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "wall")
+            {
+                if (movingRight == true)
+                {
+                    transform.eulerAngles = new Vector3(0, -180, 0);
+                    movingRight = false;
+                }
+                else
+                {
+
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    movingRight = true;
+
+                }
+            }
+        }**/
 
     }
 

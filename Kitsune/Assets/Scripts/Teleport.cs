@@ -33,7 +33,5 @@ public class Teleport : MonoBehaviour
 
             Destroy(teleProjectile);
         }
-
-     
     }
 }
