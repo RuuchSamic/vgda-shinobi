@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuBehavior : MonoBehaviour
 {
+    public Transform shurikenSelector;
 
     public void LoadScene(string SceneName) // changes scene to another scene based on name of scene passed
     {
@@ -17,5 +18,13 @@ public class MenuBehavior : MonoBehaviour
     {
         Time.timeScale = 1f;
         Application.Quit();
+    }
+
+    public void MoveShurikenSelector(RectTransform buttonPosition)
+    {
+
+        shurikenSelector.position = new Vector3(shurikenSelector.position.x, 
+            buttonPosition.position.y,
+           shurikenSelector.position.z);
     }
 }
