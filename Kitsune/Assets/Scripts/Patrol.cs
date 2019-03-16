@@ -8,6 +8,7 @@ public class Patrol : MonoBehaviour
     public float distance;
 
     private bool movingRight = true;
+    [SerializeField] private LayerMask m_CollideWith;
 
     public Transform groundDetection;
 
@@ -17,9 +18,9 @@ public class Patrol : MonoBehaviour
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-        RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, 0);
+        //RaycastHit[] groundInfo = Physics2D.RaycastAll(groundDetection.position);
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, m_CollideWith);
+        RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, 0, m_CollideWith);
 
         Debug.DrawRay(groundDetection.position, Vector2.right, Color.red, distance);
 

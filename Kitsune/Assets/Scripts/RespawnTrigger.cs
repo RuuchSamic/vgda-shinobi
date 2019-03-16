@@ -11,5 +11,5 @@ public class RespawnTrigger : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }   
+    }
 }
