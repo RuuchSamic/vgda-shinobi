@@ -9,6 +9,7 @@ public class ThrowMechanic : MonoBehaviour
     public GameObject projectile;
     public GameObject weapon1;
     public GameObject weapon2;
+    public GameObject weapon3;
     public Transform shotPoint;
     public Vector3 initialShot = Vector3.zero;
     public float Velocity = Projectile.svelocity;
@@ -33,6 +34,12 @@ public class ThrowMechanic : MonoBehaviour
         {
             projectile = weapon2;
             Velocity = KunaiProjectile.svelocity;
+        }
+
+        if (Input.GetKeyDown("3") == true)
+        {
+            projectile = weapon3;
+            Velocity = Grapple.svelocity;
         }
 
         Vector3 difference = CameraController.instance.mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
