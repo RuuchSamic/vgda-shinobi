@@ -4,34 +4,38 @@ using UnityEngine;
 
 public class GrappleMechanic : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
-    // NOTE: be sure to set the tag for the player game object and its children as "Player" tag
-    // This collision will also check if the shuriken collides with the player itself when teleporting
-    // and if you dont set the player's tag to "Player", the player will teleport to itself
-    //
     public GameObject grappleProjectile;
+    Vector3 grapplePosition;
+    public bool isGrappled = false;
+    public float grappleSpeed;
+    public GameObject player;
+    
 
-    private void OnCollisionEnter2D(Collision2D collision) // on collision teleport the player
+    private void Update()
     {
-
-        if (collision.gameObject.tag != "Player") // make sure object being collided is not player
+        if(isGrappled == true)
         {
-
-            //if (collision.gameObject.name == "Enemy") //  if object hit is an enemy
-            //                                          // change the enemy's postion to the player's original's position
-            //{
-            //    collision.transform.position = PlayerMovement.instance.playerTransform.position;//GetComponent<ThrowMechanic>().getinitialShotO; //transform.position;
-            //    collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            //}
-            //GameObject bob = GameObject.Find("Player");
-            //bob.transform.position = Vector3.MoveTowards(bob.transform.position, collision.transform.position, Vector3.Distance(collision.transform.position, bob.transform.position));
-
-            // calls the static function of player manager to change
-            // the player's position into the position where it collides with
-
+            float step = grappleSpeed * Time.deltaTime;
+            player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePosition, step);
+        }
+        
+        if(player.transform.position == grapplePosition)
+        {
+            isGrappled = false;
             Destroy(grappleProjectile);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+        player = GameObject.FindWithTag("Player");
+
+        if (collision.gameObject.tag != "Player")
+        {
+            grapplePosition = collision.transform.position;
+            isGrappled = true;
+            grappleProjectile.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            //Destroy(grappleProjectile);
         }
     }
 }

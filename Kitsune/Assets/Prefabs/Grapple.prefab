@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caefc1dd02797124690e4402ee9753ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  lifeTime: 2
   destroyEffect: {fileID: 1552524316579070, guid: e0b234f04a0762145be419876409b329,
     type: 3}
 --- !u!114 &4015723630597428104
@@ -158,3 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grappleProjectile: {fileID: 6501484224632479577}
+  isGrappled: 0
+  grappleSpeed: 40
+  player: {fileID: 0}
