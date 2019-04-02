@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2.0470815
+  m_Mass: 2.1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -159,5 +159,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grappleProjectile: {fileID: 6501484224632479577}
   isGrappled: 0
-  grappleSpeed: 40
+  grappleSpeed: 20
   player: {fileID: 0}

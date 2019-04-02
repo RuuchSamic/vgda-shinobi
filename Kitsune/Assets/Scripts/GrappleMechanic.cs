@@ -34,7 +34,8 @@ public class GrappleMechanic : MonoBehaviour
         {
             grapplePosition = collision.transform.position;
             isGrappled = true;
-            grappleProjectile.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            grappleProjectile.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            //grappleProjectile.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             //Destroy(grappleProjectile);
         }
     }
