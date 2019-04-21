@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ButtonSelector : MonoBehaviour
 {
-    //public Button[] Buttons; 
-   // public int buttonIndex;
+
     public Selectable CurrButton;
+
 
     // Update is called once per frame
     void Update()
@@ -18,6 +18,7 @@ public class ButtonSelector : MonoBehaviour
             {
                 CurrButton = temp;
                 CurrButton.Select();
+                
             }
             
         }
@@ -32,4 +33,8 @@ public class ButtonSelector : MonoBehaviour
             }
         }
     }
+
+
+
+
 }
