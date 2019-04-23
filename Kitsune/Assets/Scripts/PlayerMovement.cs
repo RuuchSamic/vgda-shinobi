@@ -6,6 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnEnable()
     {
         if (instance == null)
@@ -44,7 +51,30 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
             Debug.Log("false");
         }
-	}
+        
+        //Left and Right Movement animation switch
+        if (Input.GetButtonDown("Horizontal") && !jump)
+        {
+            animator.SetBool("PlayerRun", true);
+        }
+        else if (Input.GetButtonUp("Horizontal") && !jump)
+        {
+            animator.SetBool("PlayerRun", false);
+        }
+
+        //Get jump animation if jump is true
+        if (jump)
+        {
+            animator.SetBool("PlayerJump", true);
+            Debug.Log("Player in air");
+        }
+        else if (!jump)
+        {
+            animator.SetBool("PlayerJump", false);
+            Debug.Log("Player not in air");
+        }
+
+    }
 
     void FixedUpdate()
     {

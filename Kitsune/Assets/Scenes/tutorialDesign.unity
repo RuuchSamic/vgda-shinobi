@@ -557,7 +557,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.94
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -581,7 +581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5773106, y: -2.731216, z: -10}
+  m_LocalPosition: {x: 18.75001, y: -2.5101895, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 714485044}
@@ -1031,11 +1031,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 669988080}
-  - component: {fileID: 669988079}
   - component: {fileID: 669988078}
   - component: {fileID: 669988077}
   - component: {fileID: 669988076}
   - component: {fileID: 669988081}
+  - component: {fileID: 669988079}
+  - component: {fileID: 669988082}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1159,15 +1160,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86ae601fde284544fb3bd9c8e06d5a23, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.6, y: 4.6}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &669988080
@@ -1202,6 +1203,25 @@ MonoBehaviour:
   playerTransform: {fileID: 669988080}
   controller: {fileID: 669988078}
   runSpeed: 200
+--- !u!95 &669988082
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669988075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 619f9b559e27fe547a57255fa4fc6bc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &694570941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714485043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.904311, y: -0.28878403, z: 0}
+  m_LocalPosition: {x: -28.077011, y: -0.50981045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1049851592}
@@ -1360,7 +1380,7 @@ MonoBehaviour:
   m_Follow: {fileID: 669988080}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 6.94
+    OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
