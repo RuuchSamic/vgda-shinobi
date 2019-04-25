@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 177915f57076f40f3874330be3eb90a8
+guid: 2399b08667ade42af9b24b93f3d6b370
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EnemyAttackSpriteSheet_0
-    21300002: EnemyAttackSpriteSheet_1
-    21300004: EnemyAttackSpriteSheet_2
-    21300006: EnemyAttackSpriteSheet_3
-    21300008: EnemyAttackSpriteSheet_4
-    21300010: EnemyAttackSpriteSheet_5
+    21300000: EnemyWalkSpriteSheet 2_0
+    21300002: EnemyWalkSpriteSheet 2_1
+    21300004: EnemyWalkSpriteSheet 2_2
+    21300006: EnemyWalkSpriteSheet 2_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -101,12 +99,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_0
+      name: EnemyWalkSpriteSheet 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 214
+        width: 98
         height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,18 +113,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a656a3bda38dc471da7743258aa38307
+      spriteID: f39ea21162d804117b12056d20bc0e0b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_1
+      name: EnemyWalkSpriteSheet 2_1
       rect:
         serializedVersion: 2
-        x: 214
+        x: 98
         y: 0
-        width: 214
+        width: 98
         height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -135,18 +133,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2e237d9f42f44ce7b6334feebafde08
+      spriteID: 4cbfce0d0fcf94204a42dee1e6b7547e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_2
+      name: EnemyWalkSpriteSheet 2_2
       rect:
         serializedVersion: 2
-        x: 428
+        x: 196
         y: 0
-        width: 214
+        width: 98
         height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -155,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7dc0556dc9b249a98bbab996a89e817
+      spriteID: 7c25334311d02458b8bc54240f74ddb8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_3
+      name: EnemyWalkSpriteSheet 2_3
       rect:
         serializedVersion: 2
-        x: 642
+        x: 294
         y: 0
-        width: 214
+        width: 98
         height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,47 +173,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa88b45e82a2841de97933988fcab1bf
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 856
-        y: 0
-        width: 214
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 980e99098ec8f40589b4ff055e13437b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyAttackSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 1070
-        y: 0
-        width: 214
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8f23e727911247ceb53c36355d2a2cf
+      spriteID: 196a14cf8fdaa4dad9bbd852a4613a28
       vertices: []
       indices: 
       edges: []
@@ -223,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6939df1c75fdc4a0fb6cc5c8c2c7db24
+    spriteID: afe479db549c24fb387602f45fdb3c5d
     vertices: []
     indices: 
     edges: []
