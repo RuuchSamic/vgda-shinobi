@@ -9,10 +9,24 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private Rigidbody2D playerBody;
 
+    public Transform playerTransform;
+    public CharacterController2D controller;
+
+    public float runSpeed = 40f;
+
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch = false;
+    bool onGround = true;
+    private AudioSource StepSource;
+    public AudioClip[] StepSounds;
+    private int soundIndex = 0;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
+        StepSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -25,15 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         instance = null;
     }
-
-    public Transform playerTransform;
-    public CharacterController2D controller;
-
-    public float runSpeed = 40f;
-
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
+ 
 	// Update is called once per frame
 	void Update () {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -55,13 +61,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //If player is on the ground but the jump animation is on, turn it off.
-        if (!jump)
-        {
-            animator.SetBool("PlayerJump", false);
-            Debug.Log("Player not in air");
-        }
+        //if (!jump)
+        //{
+        //    animator.SetBool("PlayerJump", false);
+        //    Debug.Log("Player not in air");
+        //}
 
         //Left and Right Movement animation switch
+        //if (playerBody.velocity.y < -1 && !onGround)
+        //{
+        //    animator.SetBool("PlayerFall", true);
+        //}
         if (Input.GetButtonDown("Horizontal"))
         {
             animator.SetBool("PlayerRun", true);
@@ -70,7 +80,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("PlayerRun", false);
         }
-
         //Get jump animation if jump is true
         else if (jump)
         {
@@ -78,7 +87,30 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Player in air");
         }
 
+       
     }
+
+    void step()
+    {
+        StepSource.PlayOneShot(StepSounds[soundIndex], 1f);
+
+        if (soundIndex == 0)
+        {
+            soundIndex++;
+        }
+        else
+        {
+            soundIndex = 0;
+        }
+    }
+
+
+    public void OnLanding()
+    {
+        animator.SetBool("PlayerJump", false);
+        animator.SetBool("PlayerFall", false);
+    }
+
 
     void FixedUpdate()
     {
@@ -87,3 +119,4 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Jump == False");
     }
 }
+
