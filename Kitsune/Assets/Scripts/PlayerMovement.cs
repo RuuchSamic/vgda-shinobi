@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    bool onGround = true;
-    private AudioSource StepSource;
+    private AudioSource SoundSource;
     public AudioClip[] StepSounds;
     private int soundIndex = 0;
 
@@ -26,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
-        StepSource = GetComponent<AudioSource>();
+        SoundSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -60,18 +59,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("false");
         }
 
-        //If player is on the ground but the jump animation is on, turn it off.
-        //if (!jump)
-        //{
-        //    animator.SetBool("PlayerJump", false);
-        //    Debug.Log("Player not in air");
-        //}
-
-        //Left and Right Movement animation switch
-        //if (playerBody.velocity.y < -1 && !onGround)
-        //{
-        //    animator.SetBool("PlayerFall", true);
-        //}
         if (Input.GetButtonDown("Horizontal"))
         {
             animator.SetBool("PlayerRun", true);
@@ -92,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     void step()
     {
-        StepSource.PlayOneShot(StepSounds[soundIndex], 1f);
+        SoundSource.clip = StepSounds[soundIndex];
+        SoundSource.Play();
 
         if (soundIndex == 0)
         {
@@ -108,7 +96,8 @@ public class PlayerMovement : MonoBehaviour
     public void OnLanding()
     {
         animator.SetBool("PlayerJump", false);
-        animator.SetBool("PlayerFall", false);
+        SoundSource.clip = StepSounds[1];
+        SoundSource.Play();
     }
 
 

@@ -12,6 +12,14 @@ public class Patrol : MonoBehaviour
 
     public Transform groundDetection;
 
+    private AudioSource SoundSource;
+    public AudioClip[] StepSoundsEnemy;
+    private int soundIndex = 0;
+
+    private void Start()
+    {
+        SoundSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -62,6 +70,22 @@ public class Patrol : MonoBehaviour
             }
         }**/
 
+    }
+
+    //Plays Sounds for footsteps
+    void stepEnemy()
+    {
+        SoundSource.clip = StepSoundsEnemy[soundIndex];
+        SoundSource.Play();
+
+        if (soundIndex == 0)
+        {
+            soundIndex++;
+        }
+        else
+        {
+            soundIndex = 0;
+        }
     }
 
 }
