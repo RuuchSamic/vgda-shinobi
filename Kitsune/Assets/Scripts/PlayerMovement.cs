@@ -19,13 +19,16 @@ public class PlayerMovement : MonoBehaviour
     bool crouch = false;
     private AudioSource SoundSource;
     public AudioClip[] StepSounds;
+    public AudioClip TeleportSound;
     private int soundIndex = 0;
+    public static bool teleportHappened;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         playerBody = GetComponent<Rigidbody2D>();
         SoundSource = GetComponent<AudioSource>();
+        teleportHappened = false;
     }
 
     private void OnEnable()
@@ -71,9 +74,15 @@ public class PlayerMovement : MonoBehaviour
         else if (jump)
         {
             animator.SetBool("PlayerJump", true);
-            Debug.Log("Player in air");
         }
 
+        if (teleportHappened)
+        {
+            Debug.Log("PlayerMovement teleport = true");
+            animator.SetTrigger("PlayerTeleport");
+            SoundSource.PlayOneShot(TeleportSound, 1.0f);
+            teleportHappened = false;
+        }
        
     }
 
@@ -105,7 +114,6 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-        Debug.Log("Jump == False");
     }
 }
 
