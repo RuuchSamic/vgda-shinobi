@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     // this script uses the singleton pattern to ensure that only one instance of this class is made.
 
-    public static  PlayerManager thisInstance; 
+    public static  PlayerManager thisInstance;
 
     public GameObject playerPos; // holds player object
 
@@ -20,9 +20,12 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-        public static void setPlayerPosition(Transform f) // change player's pos
+    public static void setPlayerPosition(Transform f) // change player's pos
     {
-         thisInstance.playerPos.transform.position = f.position;
+        PlayerMovement.teleportHappened = true;
+        thisInstance.playerPos.transform.position = f.position; 
+        Debug.Log("PlayerManager teleport = true");
+
     }
 
 
