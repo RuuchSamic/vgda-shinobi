@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleProjectile: {fileID: 1752887594595040}
   HitWall: {fileID: 8300000, guid: 32ad0bd2817063b44a445f2bf2c7e796, type: 3}
-  HitFlesh: {fileID: 8300000, guid: 32ad0bd2817063b44a445f2bf2c7e796, type: 3}
+  HitFlesh: {fileID: 0}
 --- !u!61 &8046562700013218809
 BoxCollider2D:
   m_ObjectHideFlags: 0
