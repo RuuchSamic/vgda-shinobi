@@ -7,19 +7,13 @@ public class Projectile : MonoBehaviour {
     public float lifeTime;
     public static float svelocity = 20;
 
-    public GameObject destroyEffect;
-
     private void Start()
-    { 
+    {
         Invoke("DestroyProjectile", lifeTime);
     }
-    //private void Update()
-    //{
-    //   // transform.Translate(Vector2.up * speed * Time.deltaTime);
-    //}
 
     void DestroyProjectile() {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
         Destroy(gameObject);
     }
 
@@ -38,12 +32,9 @@ public class Projectile : MonoBehaviour {
     }
     void ShurikenStick(Collision2D col)
     {
-
-        // move the arrow deep inside the enemy or whatever it sticks to
-        //col.transform.Translate(depth * -Vector2.right);
-        // Make the arrow a child of the thing it's stuck to
         transform.parent = col.transform;
-        //Destroy the arrow's rigidbody2D and collider2D
+
+        //Destroy the shuriken's rigidbody2D and collider2D
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         Destroy(gameObject.GetComponent<BoxCollider2D>());
     }
