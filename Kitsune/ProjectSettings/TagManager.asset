@@ -7,6 +7,8 @@ TagManager:
   - floor
   - wall
   - Enemy
+  - Torii
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Player
   - CameraConfine
   - Enemy
-  - 
-  - 
+  - EnemyAttack
+  - Torii
   - 
   - 
   - 
@@ -43,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Torii
+    uniqueID: 345547921
     locked: 0

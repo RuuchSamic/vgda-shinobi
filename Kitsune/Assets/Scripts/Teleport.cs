@@ -15,7 +15,7 @@ public class Teleport : MonoBehaviour
     public AudioClip HitWall;
     public AudioClip HitFlesh;
 
-    private Renderer spriteImage;  // renderer variable
+    private Renderer spriteImage;  
     private BoxCollider2D colliderObj;
     private AudioSource SoundSource;
 
@@ -54,7 +54,7 @@ public class Teleport : MonoBehaviour
                                                              // the player's position into the position where it collides with
             spriteImage.enabled = false;
             colliderObj.enabled = false;
-            Destroy(teleProjectile, 2);
+            Destroy(teleProjectile, 1.0f);
         }
     }
 }
