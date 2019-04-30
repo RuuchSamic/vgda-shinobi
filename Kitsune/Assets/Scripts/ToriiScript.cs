@@ -1,22 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToriiScript : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
-
-    private void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (true)
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Player has ended the level");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Debug.Log("Player has left the stage!");
+            SceneManager.LoadScene("Kenny's Scene");
         }
     }
 }
