@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 666cdb75cb8327144af9b952a5fb6026
+guid: 27daa489e9ef2441c96c69835ce2a3e7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KitsuneDeathSpriteSheet_0
-    21300002: KitsuneDeathSpriteSheet_1
-    21300004: KitsuneDeathSpriteSheet_2
-    21300006: KitsuneDeathSpriteSheet_3
-    21300008: KitsuneDeathSpriteSheet_4
+    21300000: KitsuneArmThrowSpriteSheet_0
+    21300002: KitsuneArmThrowSpriteSheet_1
+    21300004: KitsuneArmThrowSpriteSheet_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -100,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KitsuneDeathSpriteSheet_0
+      name: KitsuneArmThrowSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 214
+        width: 36
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,19 +112,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a10222f86c3a460bab83f28eed0c1ea
+      spriteID: 9cb06b5bb5ca643df9108abb65c5c9ca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KitsuneDeathSpriteSheet_1
+      name: KitsuneArmThrowSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 36
         y: 0
-        width: 200
-        height: 214
+        width: 36
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,19 +132,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a68ffcd1d9d774627a1d8fc291b644c4
+      spriteID: 81a8ff44a5ded4b93bcd6a1302fa7670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KitsuneDeathSpriteSheet_2
+      name: KitsuneArmThrowSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 72
         y: 0
-        width: 200
-        height: 214
+        width: 36
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,47 +152,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1eea345c70f04da8a228171e8d17905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KitsuneDeathSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 200
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 388de3582e7d5415cbc491b355bf42a7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KitsuneDeathSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 200
-        height: 214
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ea497676a16945ebb8670bee7714e33
+      spriteID: 8b6797298c6df4a93832d81e39afe052
       vertices: []
       indices: 
       edges: []
@@ -202,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f1e5572896fb6e9488d28b7b77ddad8d
+    spriteID: 114389bdfe1ec4cd3afb186fdd2c872d
     vertices: []
     indices: 
     edges: []
