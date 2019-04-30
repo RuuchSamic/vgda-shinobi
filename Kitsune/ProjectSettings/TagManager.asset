@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Torii
   - EnemyAttack
+  - Detection
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemy
   - EnemyAttack
   - Torii
-  - 
+  - Detector
   - 
   - 
   - 

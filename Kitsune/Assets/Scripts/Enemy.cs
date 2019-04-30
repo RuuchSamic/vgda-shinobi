@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static bool seesPlayer;
     private Animator anim;
     public float speed;
     public float distance;
-    enum State {idle, atk, walk };
+    public int state; // 0 = idle; 1 = atk; 2 = walk;
 
     private bool movingRight = true;
     [SerializeField] private LayerMask m_CollideWith;
@@ -23,15 +24,30 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         SoundSource = GetComponent<AudioSource>();
+        state = 2;
+        seesPlayer = false;
     }
 
     void Update()
     {
-        if (state == walk)
+
+        // if idle
+        if (state == 0)
+        {
+
+        }
+
+        // if atk 
+        if (state == 1)
+        {
+
+        }
+
+        // if walking
+        if (state == 2)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-
-            //RaycastHit[] groundInfo = Physics2D.RaycastAll(groundDetection.position);
+            
             RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, m_CollideWith);
             RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, 0, m_CollideWith);
 
@@ -58,7 +74,7 @@ public class Enemy : MonoBehaviour
    
     }
 
-    //Plays Sounds for footsteps
+    // Plays Sounds for footsteps
     void stepEnemy()
     {
         SoundSource.clip = StepSoundsEnemy[soundIndex];
