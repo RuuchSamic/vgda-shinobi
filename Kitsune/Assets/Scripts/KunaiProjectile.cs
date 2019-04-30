@@ -7,8 +7,6 @@ public class KunaiProjectile : MonoBehaviour
     public float lifeTime;
     public static float svelocity = 50;
 
-    public GameObject destroyEffect;
-
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -20,7 +18,6 @@ public class KunaiProjectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
