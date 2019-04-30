@@ -13,9 +13,17 @@ public class ThrowMechanic : MonoBehaviour
     public Transform shotPoint;
     public Vector3 initialShot = Vector3.zero;
     public float Velocity = Projectile.svelocity;
+    public AudioClip ThrowSound;
 
+    private AudioSource SoundSource;
     private float timeBtwShots;
     public float startTimeBtwShots;
+
+    void Start()
+    {
+        SoundSource = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Awake()
     {
@@ -50,6 +58,9 @@ public class ThrowMechanic : MonoBehaviour
         {             
             if (Input.GetMouseButtonDown(0))
             {
+                SoundSource.clip = ThrowSound;
+                SoundSource.Play();
+
                 GameObject proj = GameObject.Instantiate(projectile, shotPoint.position, transform.rotation);
                 proj.GetComponent<Rigidbody2D>().AddForce(proj.transform.up * Velocity, ForceMode2D.Impulse);
 
