@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDetectionScript : MonoBehaviour
+public class EnemyAttackRange : MonoBehaviour
 {
+ 
+    public Transform playerPos;
+    [SerializeField] private LayerMask m_CollideWithAtkRange;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,16 +18,17 @@ public class EnemyDetectionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RaycastHit2D playerInfo = Physics2D.Raycast(playerPos.position, Vector2.right, 0, m_CollideWithAtkRange);
+
     }
 
     private void OnTriggerEnter2D(Collider2D player)
     {
-        if(player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Player")
         {
-            Enemy.seesPlayer = true;
+            Enemy.inAttackRange = true;
 
-            Debug.Log("i see u");
+            Debug.Log("im gonna atk u);
         }
     }
 
@@ -31,8 +36,8 @@ public class EnemyDetectionScript : MonoBehaviour
     {
         if (player.gameObject.tag == "Player")
         {
-            Enemy.seesPlayer = false;
-            Debug.Log("whered u go");
+            Enemy.inAttackRange = false;
+            Debug.Log("i cant atk u");
         }
     }
 }

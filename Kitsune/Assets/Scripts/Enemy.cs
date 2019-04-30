@@ -5,8 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    //TO DO: add booleans for animation states, e.g. anim.setBool("isFollowing", true);?
+    //TO DO: add booleans for animation states, e.g. anim.setBool("isFollowing", true);
     public static bool seesPlayer;
+    public static bool inAttackRange;
     private Animator anim;
     public float speed;
     public float distance;
