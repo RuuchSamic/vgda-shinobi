@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttackRange : MonoBehaviour
-{
- 
-    public Transform playerPos;
+{ 
+    public Transform attackRangeDetection;
     [SerializeField] private LayerMask m_CollideWithAtkRange;
 
 
@@ -18,26 +17,19 @@ public class EnemyAttackRange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D playerInfo = Physics2D.Raycast(playerPos.position, Vector2.right, 0, m_CollideWithAtkRange);
+        RaycastHit2D playerInfo = Physics2D.Raycast(attackRangeDetection.position, Vector2.right, 0, m_CollideWithAtkRange);
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D player)
-    {
-        if (player.gameObject.tag == "Player")
+        if (playerInfo.collider == true)
         {
             Enemy.inAttackRange = true;
+            Debug.Log("im gonna atk u");
 
-            Debug.Log("im gonna atk u);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D player)
-    {
-        if (player.gameObject.tag == "Player")
+        else
         {
-            Enemy.inAttackRange = false;
-            Debug.Log("i cant atk u");
+            Debug.Log("i can't atk u");
         }
+
     }
+
 }

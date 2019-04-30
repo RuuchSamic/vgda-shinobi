@@ -383,7 +383,7 @@ GameObject:
   m_Layer: 0
   m_Name: AttackRangeDetection
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -395,7 +395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073368281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8922212, y: 2.04524, z: -0.0651236}
+  m_LocalPosition: {x: 2.26, y: -0.33, z: -0.0651236}
   m_LocalScale: {x: 1.55739, y: 1.55739, z: 1.55739}
   m_Children: []
   m_Father: {fileID: 1702680714}
@@ -413,6 +413,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c7f6206d8d9fb41bd2b5ef1691c9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRangeDetection: {fileID: 1073368282}
+  m_CollideWithAtkRange:
+    serializedVersion: 2
+    m_Bits: 2560
 --- !u!1 &1376904734
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,14 +627,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   distance: 0.5
-  state: 2
+  state: 0
   m_CollideWith:
     serializedVersion: 2
     m_Bits: 2871
   groundDetection: {fileID: 572380234}
   StepSoundsEnemy:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4c51bd75a683518488e8af19a6e3fd0f, type: 3}
+  - {fileID: 8300000, guid: 46c4c1a177b494d4b8f8cce59c0b2b87, type: 3}
 --- !u!4 &1702680714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5307829482253595416, guid: 356f93d6ffd399b40a0f287c699d2eee,
