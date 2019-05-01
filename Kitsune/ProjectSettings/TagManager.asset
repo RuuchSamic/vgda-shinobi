@@ -47,6 +47,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2021227539
+    locked: 0
   - name: Torii
     uniqueID: 345547921
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 1506313517
+    locked: 0
+  - name: Player
+    uniqueID: 3147438365
+    locked: 0
+  - name: FrontofPlayer
+    uniqueID: 3813340605
     locked: 0
