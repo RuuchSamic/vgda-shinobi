@@ -6,12 +6,13 @@ public class EnemyAttackRange : MonoBehaviour
 { 
     public Transform attackRangeDetection;
     [SerializeField] private LayerMask m_CollideWithAtkRange;
+    private Animator anim;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -22,11 +23,13 @@ public class EnemyAttackRange : MonoBehaviour
         if (playerInfo.collider == true)
         {
             Enemy.inAttackRange = true;
+
             Debug.Log("im gonna atk u");
 
         }
         else
         {
+            Enemy.inAttackRange = false;
             Debug.Log("i can't atk u");
         }
 
