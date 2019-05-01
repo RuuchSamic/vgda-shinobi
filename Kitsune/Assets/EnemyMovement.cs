@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public bool canWalk;
-    public GameObject enemy;
+    public Enemy enemy;
     public float enemySpeed;
     public Transform groundDetection;
     public RaycastHit2D groundInfo;
@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
        anim = gameObject.GetComponent<Animator>();
+        enemySpeed = enemy.speed;
     }
 
     // Update is called once per frame

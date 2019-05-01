@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public static bool seesPlayer;
     public static bool inAttackRange;
     private Animator anim;
-    public float speed;
+    public float speed = 5;
     public float distance;
     public int state; // 0 = idle; 1 = atk; 2 = walk; 3 = followPlayer;
     public RaycastHit2D groundInfo;
@@ -116,8 +116,17 @@ public class Enemy : MonoBehaviour
         // if follow player
         else if (state == 3)
         {
-            anim.SetBool("isFollowing", true);
-            followMovement.follow();
+             anim.SetBool("isFollowing", true);
+             followMovement.follow();
+            
+
+            if (seesPlayer && wallInfo.collider == true)
+            {
+                seesPlayer = false;
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isPatrolling", true);
+                state = 2;
+            }
 
             //if enemy detects a ledge while player in sight, switch to idle state, rather than turn around and keep walking in opposite direction
             if (seesPlayer && groundInfo.collider == false)
@@ -134,6 +143,12 @@ public class Enemy : MonoBehaviour
                 anim.SetBool("isAttacking", true);
                 state = 1;
 
+            }
+            if (!seesPlayer)
+            {
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isPatrolling", true);
+                state = 2;
             }
         }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFollowMovement : MonoBehaviour
 {
-    public GameObject enemy;
+    public Enemy enemy;
     private Transform playerPos;
     public float speed;
     public Animator anim;
@@ -14,6 +14,7 @@ public class EnemyFollowMovement : MonoBehaviour
     {
         anim = gameObject.GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        speed = enemy.speed;
     }
 
     // Update is called once per frame
