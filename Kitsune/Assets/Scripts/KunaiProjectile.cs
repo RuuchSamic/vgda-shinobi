@@ -11,10 +11,14 @@ public class KunaiProjectile : MonoBehaviour
     {
         Invoke("DestroyProjectile", lifeTime);
     }
-    //private void Update()
-    //{
-    //    transform.Translate(Vector2.up * speed * Time.deltaTime);
-    //}
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag != "Player")
+        {
+            DestroyProjectile();
+        }
+    }
 
     void DestroyProjectile()
     {

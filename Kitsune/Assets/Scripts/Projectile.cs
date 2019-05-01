@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     public float lifeTime;
-    public static float svelocity = 20;
+    public static float svelocity = 10;
 
     private void Start()
     {
@@ -18,7 +18,6 @@ public class Projectile : MonoBehaviour {
     }
 
     bool hit = false;
-    float depth = 0.30F;
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag != "Player")
