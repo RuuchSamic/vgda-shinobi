@@ -112,36 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &2816359
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2816360}
-  m_Layer: 0
-  m_Name: InAirCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2816360
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816359}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -2.19, z: 0.43610314}
-  m_LocalScale: {x: 1.55739, y: 1.55739, z: 1.55739}
-  m_Children: []
-  m_Father: {fileID: 169949465}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &36614952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7071098513554081070, guid: 5aa4f9aca6c836244aed24248ee9c8d1,
@@ -228,12 +198,6 @@ PrefabInstance:
       objectReference: {fileID: 36614952}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c76aa7428f0014d8242ad395b7f9c9, type: 3}
---- !u!4 &169949465 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2354103186764341625, guid: 1a060c4fce9b3074f9716a9844f75fbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7566688022445886068}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &187278760
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187278760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26, y: -3.9, z: 0}
+  m_LocalPosition: {x: -22.83, y: -3.9, z: 0}
   m_LocalScale: {x: 9.82827, y: 1.08, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -779,7 +743,7 @@ PrefabInstance:
     - target: {fileID: 8788277771095941608, guid: 05b6a38cdd872694da0f134030fc142e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.934999
+      value: -10.003181
       objectReference: {fileID: 0}
     - target: {fileID: 8788277771095941608, guid: 05b6a38cdd872694da0f134030fc142e,
         type: 3}
@@ -993,19 +957,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1702680708, guid: 1a060c4fce9b3074f9716a9844f75fbd, type: 3}
-      propertyPath: InAirCheck
-      value: 
-      objectReference: {fileID: 2816360}
-    - target: {fileID: 1702680708, guid: 1a060c4fce9b3074f9716a9844f75fbd, type: 3}
-      propertyPath: m_CollideWith.m_Bits
-      value: 823
-      objectReference: {fileID: 0}
-    - target: {fileID: 7266317204321634772, guid: 1a060c4fce9b3074f9716a9844f75fbd,
-        type: 3}
-      propertyPath: m_Mass
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a060c4fce9b3074f9716a9844f75fbd, type: 3}

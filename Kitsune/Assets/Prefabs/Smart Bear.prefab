@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2816359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2816360}
+  m_Layer: 0
+  m_Name: InAirCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2816360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03, y: -2.19, z: 0.43610314}
+  m_LocalScale: {x: 1.55739, y: 1.55739, z: 1.55739}
+  m_Children: []
+  m_Father: {fileID: 2354103186764341625}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696052407
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,9 +229,9 @@ MonoBehaviour:
   attackMovement: {fileID: 0}
   m_CollideWith:
     serializedVersion: 2
-    m_Bits: 2871
+    m_Bits: 823
   groundDetection: {fileID: 6198469921536805461}
-  InAirCheck: {fileID: 0}
+  InAirCheck: {fileID: 2816360}
   StepSoundsEnemy:
   - {fileID: 8300000, guid: 4c51bd75a683518488e8af19a6e3fd0f, type: 3}
   - {fileID: 8300000, guid: 46c4c1a177b494d4b8f8cce59c0b2b87, type: 3}
@@ -274,15 +304,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1321495254823626305, guid: 356f93d6ffd399b40a0f287c699d2eee,
+        type: 3}
+      propertyPath: m_Name
+      value: Bear
+      objectReference: {fileID: 0}
     - target: {fileID: 5307829482253595416, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.82
+      value: -2.88
       objectReference: {fileID: 0}
     - target: {fileID: 5307829482253595416, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.03
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 5307829482253595416, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
@@ -329,11 +364,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1321495254823626305, guid: 356f93d6ffd399b40a0f287c699d2eee,
-        type: 3}
-      propertyPath: m_Name
-      value: Smart Bear
-      objectReference: {fileID: 0}
     - target: {fileID: 7801924155318075956, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
       propertyPath: m_Enabled
@@ -341,28 +371,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996811011308690357, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 996811011308690357, guid: 356f93d6ffd399b40a0f287c699d2eee,
-        type: 3}
       propertyPath: m_Mass
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 233476754422968787, guid: 356f93d6ffd399b40a0f287c699d2eee,
+    - target: {fileID: 996811011308690357, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
-      propertyPath: m_CollideWith.m_Bits
-      value: 2871
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 233476754422968787, guid: 356f93d6ffd399b40a0f287c699d2eee,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993674450925361843, guid: 356f93d6ffd399b40a0f287c699d2eee,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f93d6ffd399b40a0f287c699d2eee, type: 3}

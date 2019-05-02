@@ -107,6 +107,11 @@ public class Enemy : MonoBehaviour
                     anim.SetBool("isIdle", false);
                     //when in atk range, change state to == 1
                 }
+                if (seesPlayer && groundInfo.collider == false)
+            {
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isIdle", true);
+            }
                 //if the player is not in sight of the enemy, have enemy patrol
                 else if (!seesPlayer && (airInfo.collider == true))
                 {
@@ -147,13 +152,21 @@ public class Enemy : MonoBehaviour
             enemyMovement.canWalk = true;
             anim.SetBool("isPatrolling", true);
             // if the enemy sees the player while patrolling, change to followPlayer state
-            if (seesPlayer)
+            if (seesPlayer && groundInfo.collider == true)
             {
                 Debug.Log("i see u fox dude");
                 enemyMovement.canWalk = false;
                 anim.SetBool("isPatrolling", false);
                 anim.SetBool("isFollowing", true);
                 state = 3;
+            }
+            else if (seesPlayer && groundInfo.collider == false)
+            {
+                enemyMovement.canWalk = false;
+                anim.SetBool("isPatrolling", false);
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isIdle", true);
+                state = 0;
             }
 
         }
@@ -167,6 +180,7 @@ public class Enemy : MonoBehaviour
 
             if (seesPlayer && wallInfo.collider == true)
             {
+                Debug.Log("executing seesPlayer && wallInfo.collder == true block");
                 seesPlayer = false;
                 anim.SetBool("isFollowing", false);
                 anim.SetBool("isPatrolling", true);
@@ -176,14 +190,17 @@ public class Enemy : MonoBehaviour
             //if enemy detects a ledge while player in sight, switch to idle state, rather than turn around and keep walking in opposite direction
             if (seesPlayer && groundInfo.collider == false)
             {
+                Debug.Log("I see a ledge AND i see the player, so I'm going to idle");
                 anim.SetBool("seesLedge", true);
                 anim.SetBool("isFollowing", false);
+                anim.SetBool("isIdle", true);
                 state = 0;
             }
 
             // TO DO: if player in attack range, switch state to attack
-            if (inAttackRange)
+            if (inAttackRange && groundInfo.collider == true)
             {
+                Debug.Log("executing seesPlayer && groundInfo.collder == true block");
                 anim.SetBool("isFollowing", false);
                 anim.SetBool("isAttacking", true);
                 state = 1;
@@ -191,6 +208,7 @@ public class Enemy : MonoBehaviour
             }
             if (!seesPlayer)
             {
+                Debug.Log("executing !seesPlayer block");
                 anim.SetBool("isFollowing", false);
                 anim.SetBool("isPatrolling", true);
                 state = 2;
