@@ -33,9 +33,7 @@ public class EnemyFollowMovement : MonoBehaviour
 
         //TO DO: add vector that is able to tell if player is behind enemy or in front of it, and flips bear accordingly? 
         //OR: change circle collider to a ray
-        enemy.transform.position = Vector2.MoveTowards(enemy.transform.position, playerPos.position, speed * Time.deltaTime);
-
-
+        enemy.transform.position = Vector2.MoveTowards(enemy.transform.position, playerPos.position, 0.1f);
 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement instance;
@@ -109,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         SoundSource.Play();
     }
 
-
+   
     void FixedUpdate()
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);

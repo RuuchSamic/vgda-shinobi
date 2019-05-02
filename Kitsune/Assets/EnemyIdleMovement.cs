@@ -18,6 +18,7 @@ public class EnemyIdleMovement : MonoBehaviour
     {
         if (anim.GetBool("isIdle"))
         {
+            anim.SetBool("isPatrolling", false);
             idle();
         }
     }

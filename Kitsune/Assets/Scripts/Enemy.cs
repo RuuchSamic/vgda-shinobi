@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-
+    public KunaiDamageScript kunai;
     public float health;
     public static bool seesPlayer;
     public static bool inAttackRange;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     public int state; // 0 = idle; 1 = atk; 2 = walk; 3 = followPlayer;
     public RaycastHit2D groundInfo;
     public RaycastHit2D wallInfo;
+    public RaycastHit2D airInfo;
     public EnemyMovement enemyMovement;
     public EnemyIdleMovement idleMovement;
     public EnemyFollowMovement followMovement;
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask m_CollideWith;
 
     public Transform groundDetection;
+    public Transform InAirCheck;
 
     private AudioSource SoundSource;
     public AudioClip[] StepSoundsEnemy;
@@ -31,6 +34,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = 20;
         enemyMovement = GetComponent<EnemyMovement>();
         idleMovement = GetComponent<EnemyIdleMovement>();
         followMovement = GetComponent<EnemyFollowMovement>();
@@ -39,12 +43,47 @@ public class Enemy : MonoBehaviour
 
         anim = GetComponent<Animator>();
         SoundSource = GetComponent<AudioSource>();
-        state = 2;
+        airInfo = Physics2D.Raycast(InAirCheck.position, Vector2.down, 1, m_CollideWith);
+        if (airInfo.collider == false)
+        {
+            anim.SetBool("inAir", true);
+            anim.SetBool("isPatrolling", false);
+            state = 0;
+        }
+        else
+        {
+            state = 2;
+        }
         seesPlayer = false;
     }
 
     void Update()
     {
+
+        Debug.Log("BEAR'S CURRENT HEALTH: " + health);
+
+        if (health <= 0)
+        {
+            killEnemy();
+        }
+
+        airInfo = Physics2D.Raycast(InAirCheck.position, Vector2.down, 1, m_CollideWith);
+
+        if (airInfo.collider == false)
+        {
+            state = 0;
+            enemyMovement.canWalk = false;
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isPatrolling", false);
+            anim.SetBool("inAir", true);
+        }
+        else if (airInfo.collider == true)
+        {
+            enemyMovement.canWalk = true;
+            anim.SetBool("inAir", false);
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isPatrolling", true);
+        }
 
         Debug.Log("isIdle: " + anim.GetBool("isIdle"));
         Debug.Log("state: " + state);
@@ -54,6 +93,12 @@ public class Enemy : MonoBehaviour
         //if idle
         if (state == 0)
             {
+            //enemyMovement.canWalk = false;
+                if (anim.GetBool("inAir"))
+            {
+                anim.SetBool("isPatrolling", false);
+            }
+                
                 // while (seesPlayer && no ledge) go to follow state
                 if (seesPlayer && groundInfo.collider == true)
                 {
@@ -63,7 +108,7 @@ public class Enemy : MonoBehaviour
                     //when in atk range, change state to == 1
                 }
                 //if the player is not in sight of the enemy, have enemy patrol
-                else if (!seesPlayer)
+                else if (!seesPlayer && (airInfo.collider == true))
                 {
                     anim.SetBool("isFollowing", false);
                     anim.SetBool("isIdle", false);
@@ -154,6 +199,15 @@ public class Enemy : MonoBehaviour
 
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("im touching u");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
     // Plays Sounds for footsteps
     void stepEnemy()
     {
@@ -169,4 +223,19 @@ public class Enemy : MonoBehaviour
             soundIndex = 0;
         }
     }
+
+    void killEnemy()
+    {
+      
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(gameObject);
+        
+    }
+
+    //void enemyMoveForwardOneUnit()
+    //{
+    //    this.transform.Translate(Vector2.right * speed * Time.deltaTime);
+    //}
+
+
 }
