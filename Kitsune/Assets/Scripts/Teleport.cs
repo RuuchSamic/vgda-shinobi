@@ -33,7 +33,7 @@ public class Teleport : MonoBehaviour
         if (collision.gameObject.tag != "Player") // make sure object being collided is not player
         {
 
-            if (collision.gameObject.name == "Bear") //  if object hit is an enemy
+            if (collision.gameObject.tag == "Enemy") //  if object hit is an enemy
                                                      // change the enemy's postion to the player's original's position
             {
                 collision.transform.position = PlayerMovement.instance.playerTransform.position;//GetComponent<ThrowMechanic>().getinitialShotO; //transform.position;
