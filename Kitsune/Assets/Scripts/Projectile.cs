@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour {
     }
     void ShurikenStick(Collision2D col)
     {
-        transform.parent = col.transform;
+        transform.parent.position = col.transform.position;
 
         //Destroy the shuriken's rigidbody2D and collider2D
         Destroy(gameObject.GetComponent<Rigidbody2D>());
