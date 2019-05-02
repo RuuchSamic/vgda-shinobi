@@ -1002,5 +1002,10 @@ PrefabInstance:
       propertyPath: m_CollideWith.m_Bits
       value: 823
       objectReference: {fileID: 0}
+    - target: {fileID: 7266317204321634772, guid: 1a060c4fce9b3074f9716a9844f75fbd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a060c4fce9b3074f9716a9844f75fbd, type: 3}
