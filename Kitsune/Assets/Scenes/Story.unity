@@ -245,19 +245,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Credits:
-
-    Matt Berrios - Programmer
-
-    Chloe Pitko - Artist
-
-    Maddie Powers - Programmer
-
-    Kenny Nguyen - Programmer
-
-    Johnson Nguyen - Sound Designer
-
-    Marcus Chiu - Programmer'
+  m_text: Kitsune, a young ninja fox comes back home to find his village burned down
+    by the evil Bear Clan. In order to exact vengence, Kitsune must journey through
+    the forest and assassinate the ninja bears before they reach the Fox Clan's hidden
+    shrine...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca4ebfa651bbe07488fea50a199a845c, type: 2}
   m_sharedMaterial: {fileID: 21767160286860996, guid: ca4ebfa651bbe07488fea50a199a845c,
@@ -327,12 +318,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 794573956}
-    characterCount: 165
+    characterCount: 247
     spriteCount: 0
-    spaceCount: 25
-    wordCount: 26
+    spaceCount: 42
+    wordCount: 43
     linkCount: 0
-    lineCount: 7
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -361,6 +352,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794573954}
   m_CullTransparentMesh: 0
+--- !u!1001 &998595373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9046222985767470972, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Background Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.5537
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24419263
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.735937
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222985767470974, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046222984217816565, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d11c3d74a0465824183df08a5a4fc7ea, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a00e2396097a7994ab6213a37babb5ad, type: 3}
 --- !u!1 &1565872012
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06abe8b078a76154289eef86a91ac528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Kenny's Scene
+  sceneName: tutorialDesign
 --- !u!4 &1565872014
 Transform:
   m_ObjectHideFlags: 0

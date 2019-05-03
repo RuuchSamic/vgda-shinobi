@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 39cf15626cddbba469c60ddb1f3e9114
+  - enabled: 1
+    path: Assets/Scenes/MarcusFirstLevel.unity
+    guid: 6de768fb6ea42ad49a66d676f04955f5
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 1acda95f0f7bae04497c65b5dfed8a07
   m_configObjects: {}

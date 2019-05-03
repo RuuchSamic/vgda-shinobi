@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PressAnyKey : MonoBehaviour
 {
+
+    public string sceneName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,6 @@ public class PressAnyKey : MonoBehaviour
     public void LoadScene() // changes scene to another scene based on name of scene passed
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Kenny's Scene");
+        SceneManager.LoadScene(sceneName);
     }
 }

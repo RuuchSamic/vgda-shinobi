@@ -1515,6 +1515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e678324a81a494a8ee4922ce87b5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Kenny's Scene
 --- !u!1001 &1949290296
 PrefabInstance:
   m_ObjectHideFlags: 0
