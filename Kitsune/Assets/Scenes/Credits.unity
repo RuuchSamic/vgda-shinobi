@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 29fe4a788fe72b04787bb2be1c9f456d, type: 3}
+    - target: {fileID: 9046222984217816565, guid: a00e2396097a7994ab6213a37babb5ad,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a00e2396097a7994ab6213a37babb5ad, type: 3}
 --- !u!1 &764495188
@@ -325,7 +330,7 @@ MonoBehaviour:
 
     Chloe Pitko - Artist
 
-    Maddie Powers - Programmer
+    Maddie Powers-Johnson - Programmer
 
     Kenny Nguyen - Programmer
 
@@ -401,7 +406,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 794573956}
-    characterCount: 165
+    characterCount: 173
     spriteCount: 0
     spaceCount: 25
     wordCount: 26
