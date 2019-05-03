@@ -258,7 +258,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b19fbdf27e402f04eb63bede90e6876a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.183
+  m_Volume: 0.792
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -447,8 +447,6 @@ MonoBehaviour:
   Velocity: 0
   ThrowSound: {fileID: 8300000, guid: 7643fa3113102fa4ba05d314f86c489f, type: 3}
   startTimeBtwShots: 0.25
-  projectileCoolDown: 0
-  teleportCoolDown: 0
 --- !u!82 &7071098513796791812
 AudioSource:
   m_ObjectHideFlags: 0
