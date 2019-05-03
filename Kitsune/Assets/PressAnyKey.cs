@@ -18,7 +18,7 @@ public class PressAnyKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey || Input.GetMouseButtonDown(0))
+        if (Input.anyKey)
         {
             LoadScene();
         }
