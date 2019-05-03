@@ -101,10 +101,10 @@ public class Enemy : MonoBehaviour
         if (state == 0)
             {
 
-            if (anim.GetBool("isDying") || health == 0)
-            {
-                killEnemy();
-            }
+            //if (anim.GetBool("isDying") || health == 0)
+            //{
+            //    killEnemy();
+            //}
 
             //enemyMovement.canWalk = false;
                 if (anim.GetBool("inAir") && health > 0)
@@ -295,14 +295,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void killEnemy()
+    public void killEnemy()
     {
 
         //Destroy(gameObject.GetComponent<SpriteRenderer>());
         anim.SetBool("isPatrolling", false);
         enemyMovement.canWalk = false;
         //gameObject.tag = "DeadEnemy";
-        //Destroy(gameObject, 0.4f);
+        Destroy(gameObject);
         
     }
 
