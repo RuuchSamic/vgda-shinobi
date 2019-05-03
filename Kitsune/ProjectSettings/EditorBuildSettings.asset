@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Kenny's scene.unity
     guid: 88272ab45659b4d4cb5bfb16cca4f929
   - enabled: 0
-    path: Assets/Scenes/levelOneTutorial.unity
+    path: Assets/Scenes/levelOneTutorial (OLD).unity
     guid: 180f9021b3796a44fa9b0307a00ff1af
   - enabled: 1
     path: Assets/Scenes/tutorialDesign.unity
