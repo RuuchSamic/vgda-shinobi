@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         soundSource = GetComponent<AudioSource>();
+        GameOverBehavior.currentScene = SceneManager.GetActiveScene().name;
     }
 
     private void Awake()
@@ -47,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         if (KillKitsune.KitsuneIsDead)
         {
             KillKitsune.KitsuneIsDead = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("gameover");
         }
 
         if (Enemy.bearDied)
