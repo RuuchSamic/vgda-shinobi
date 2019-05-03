@@ -32,7 +32,7 @@ public class EnemyAttackRange : MonoBehaviour
         else
         {
             Enemy.inAttackRange = false;
-            //anim.SetBool("animInAtkRange", false);
+            anim.SetBool("animInAtkRange", false);
             Debug.Log("i can't atk u");
         }
 
