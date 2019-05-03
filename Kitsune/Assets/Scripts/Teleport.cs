@@ -52,9 +52,9 @@ public class Teleport : MonoBehaviour
 
             PlayerManager.setPlayerPosition(this.transform); // calls the static function of player manager to change
                                                              // the player's position into the position where it collides with
-            spriteImage.enabled = false;
-            colliderObj.enabled = false;
-            Destroy(teleProjectile, 1.0f);
+            //spriteImage.enabled = false;
+            //colliderObj.enabled = false;
+            Destroy(teleProjectile, 10.0f);
         }
     }
 }

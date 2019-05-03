@@ -18,14 +18,16 @@ public class ThrowMechanic : MonoBehaviour
     private AudioSource SoundSource;
     private float timeBtwShots;
     public float startTimeBtwShots;
-    public float projectileCoolDown;
-    public float teleportCoolDown;
+    private float projectileCoolDown;
+    private float teleportCoolDown;
     private float teleportTime;
     private float projectileTime;
 
     void Start()
     {
         SoundSource = GetComponent<AudioSource>();
+        projectileCoolDown = 1.0f;
+        teleportCoolDown = 2.0f;
     }
 
     // Update is called once per frame

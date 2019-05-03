@@ -6,9 +6,14 @@ public class KunaiProjectile : MonoBehaviour
 {
     public float lifeTime;
     public static float svelocity = 50;
-
+    private Renderer spriteImage;
+    private BoxCollider2D colliderObj;
+    private TrailRenderer myTail;
     private void Start()
     {
+        myTail = GetComponent<TrailRenderer>();
+        spriteImage = GetComponent<Renderer>();
+        colliderObj = GetComponent<BoxCollider2D>();
         Invoke("DestroyProjectile", lifeTime);
     }
 
@@ -16,7 +21,11 @@ public class KunaiProjectile : MonoBehaviour
     {
         if (other.gameObject.tag != "Player")
         {
-            DestroyProjectile();
+            //DestroyProjectile();
+            spriteImage.enabled = false;
+            colliderObj.enabled = false;
+            Destroy(myTail);
+            Destroy(gameObject, 1.0f);
         }
     }
 
