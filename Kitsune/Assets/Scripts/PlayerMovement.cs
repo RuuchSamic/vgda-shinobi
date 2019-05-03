@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            Debug.Log("jump = true");
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -71,10 +72,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("PlayerRun", false);
         }
+
         //Get jump animation if jump is true
         else if (jump)
         {
             animator.SetBool("PlayerJump", true);
+            Debug.Log("i see that i have jumped");
         }
 
         if (teleportHappened)
@@ -105,9 +108,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLanding()
     {
-        animator.SetBool("PlayerJump", false);
-        SoundSource.clip = StepSounds[1];
-        SoundSource.Play();
+        if(animator.GetBool("PlayerJump"))
+        {
+            animator.SetBool("PlayerJump", false);
+            Debug.Log("I landed");
+            SoundSource.clip = StepSounds[1];
+            SoundSource.Play();
+        }
+        
     }
 
    
