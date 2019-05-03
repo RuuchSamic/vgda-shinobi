@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MarcusSecondLevel.unity
     guid: c6368f3b9206e6346af477bacd6cc4cf
   - enabled: 1
+    path: Assets/Scenes/MarcusThirdLevel.unity
+    guid: 02ae497d90e9d7a448b4f989d04c1fea
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 39cf15626cddbba469c60ddb1f3e9114
   - enabled: 1
