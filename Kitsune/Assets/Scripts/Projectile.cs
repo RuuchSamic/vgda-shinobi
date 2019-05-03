@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour {
     public float lifeTime;
     public static float svelocity = 10;
 
+
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -32,7 +33,7 @@ public class Projectile : MonoBehaviour {
     void ShurikenStick(Collision2D col)
     {
         transform.parent.position = col.transform.position;
-
+        
         //Destroy the shuriken's rigidbody2D and collider2D
         Destroy(gameObject.GetComponent<Rigidbody2D>());
         Destroy(gameObject.GetComponent<BoxCollider2D>());
