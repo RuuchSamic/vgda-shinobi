@@ -11,7 +11,8 @@ public class GameOverBehavior : MonoBehaviour
 
     private void Start()
     {
-        currentScene = "Kenny's Scene";
+        Debug.Log("Player died at this scene: ");
+        Debug.Log(currentScene);
     }
 
     public void LoadScene() // changes scene to the scene where the player died
