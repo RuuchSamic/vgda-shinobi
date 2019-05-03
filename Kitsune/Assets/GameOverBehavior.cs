@@ -17,19 +17,19 @@ public class GameOverBehavior : MonoBehaviour
 
     public void LoadScene() // changes scene to the scene where the player died
     {
-        Time.timeScale = 1f;
+        Time.timeScale = .5f;
         SceneManager.LoadScene(currentScene);
     }
 
     public void ExitGame() // closes the game
     {
-        Time.timeScale = 1f;
+        Time.timeScale = .5f;
         Application.Quit();
     }
 
     public void MainMenuScene()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = .5f;
         SceneManager.LoadScene("Kenny's Scene");
     }
 
