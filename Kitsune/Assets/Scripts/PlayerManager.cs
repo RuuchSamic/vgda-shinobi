@@ -10,6 +10,13 @@ public class PlayerManager : MonoBehaviour
     public static  PlayerManager thisInstance;
 
     public GameObject playerPos; // holds player object
+    private AudioSource soundSource;
+    public AudioClip growl;
+
+    private void Start()
+    {
+        soundSource = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -41,6 +48,12 @@ public class PlayerManager : MonoBehaviour
         {
             KillKitsune.KitsuneIsDead = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Enemy.bearDied)
+        {
+            soundSource.PlayOneShot(growl, 1.0f);
+            Enemy.bearDied = false;
         }
     }
 

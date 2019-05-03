@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour {
 
     public float lifeTime;
     public static float svelocity = 10;
+    Rigidbody2D thisRigid;
+
 
     private void Start()
     {
@@ -31,10 +33,20 @@ public class Projectile : MonoBehaviour {
     }
     void ShurikenStick(Collision2D col)
     {
-        transform.parent.position = col.transform.position;
+        if(col.gameObject.tag == "Enemy")
+        {
+            //transform.parent.localScale.Set(transform.parent.localScale.x / col.transform.lossyScale.x, transform.parent.localScale.y / col.transform.lossyScale.y, transform.parent.localScale.z / col.transform.lossyScale.z);
+            transform.parent = col.transform;
+        }
+        else
+        {
+            Destroy(gameObject.GetComponent<Rigidbody2D>());
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            //thisRigid.constraints = RigidbodyConstraints2D.FreezePosition;
+        }
+        
 
         //Destroy the shuriken's rigidbody2D and collider2D
-        Destroy(gameObject.GetComponent<Rigidbody2D>());
-        Destroy(gameObject.GetComponent<BoxCollider2D>());
+
     }
 }

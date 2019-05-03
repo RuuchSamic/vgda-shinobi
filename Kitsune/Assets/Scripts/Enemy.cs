@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    public static bool bearDied;
     public KunaiDamageScript kunai;
     public float health;
     public static bool seesPlayer;
@@ -21,6 +22,10 @@ public class Enemy : MonoBehaviour
     public EnemyFollowMovement followMovement;
     public EnemyAttackMovement attackMovement;
     private PolygonCollider2D bearCollider;
+    private AudioSource audioSource;
+    public AudioClip KitsuneDeathCry;
+
+    public AudioClip roar;
 
     private bool movingRight = true;
     [SerializeField] private LayerMask m_CollideWith;
@@ -35,12 +40,14 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bearDied = false;
         bearCollider = GetComponent<PolygonCollider2D>();
         health = 15;
         enemyMovement = GetComponent<EnemyMovement>();
         idleMovement = GetComponent<EnemyIdleMovement>();
         followMovement = GetComponent<EnemyFollowMovement>();
         attackMovement = GetComponent<EnemyAttackMovement>();
+        audioSource = GetComponent<AudioSource>();
 
 
         anim = GetComponent<Animator>();
@@ -71,6 +78,8 @@ public class Enemy : MonoBehaviour
             anim.SetBool("isPatrolling", false);
             state = 0;
             enemyMovement.canWalk = false;
+            Debug.Log("ROAR OF DEATH");
+            
             //killEnemy();
         }
 
@@ -116,6 +125,7 @@ public class Enemy : MonoBehaviour
                 if (seesPlayer && groundInfo.collider == true && health > 0)
                 {
                     state = 3;
+                    audioSource.PlayOneShot(roar, 1.0f);
                     anim.SetBool("isFollowing", true);
                     anim.SetBool("isIdle", false);
                     //when in atk range, change state to == 1
@@ -175,6 +185,7 @@ public class Enemy : MonoBehaviour
                 anim.SetBool("isFollowing", true);
                 anim.SetBool("isPatrolling", false);
                 anim.SetBool("isAttacking", false);
+                audioSource.PlayOneShot(roar, 1.0f);
                 state = 3;
                 Debug.Log("!inAttackRang && seesPlayer");
             }
@@ -207,6 +218,7 @@ public class Enemy : MonoBehaviour
                 enemyMovement.canWalk = false;
                 anim.SetBool("isPatrolling", false);
                 anim.SetBool("isFollowing", true);
+                audioSource.PlayOneShot(roar, 1.0f);
                 state = 3;
             }
             else if (seesPlayer && groundInfo.collider == false)
@@ -275,6 +287,7 @@ public class Enemy : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Animator otherAnim = other.gameObject.GetComponent<Animator>();
             otherAnim.SetTrigger("PlayerDeath");
+            audioSource.PlayOneShot(KitsuneDeathCry, 1.0f);
             //Destroy(other.gameObject, otherAnim.GetCurrentAnimatorStateInfo(0).length);
         }
     }
@@ -302,10 +315,9 @@ public class Enemy : MonoBehaviour
         anim.SetBool("isPatrolling", false);
         enemyMovement.canWalk = false;
         //gameObject.tag = "DeadEnemy";
+        bearDied = true;
         Destroy(gameObject);
         
     }
-
-
 
 }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D playerBody;
+    private bool jumpStart;
 
     public Transform playerTransform;
     public CharacterController2D controller;
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            jumpStart = true;
             Debug.Log("jump = true");
         }
 
@@ -108,12 +110,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLanding()
     {
-        if(animator.GetBool("PlayerJump"))
+        if(animator.GetBool("PlayerJump") && !jumpStart)
         {
             animator.SetBool("PlayerJump", false);
             Debug.Log("I landed");
             SoundSource.clip = StepSounds[1];
             SoundSource.Play();
+        }
+        else
+        {
+            jumpStart = false;
         }
         
     }

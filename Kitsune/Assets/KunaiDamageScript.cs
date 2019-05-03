@@ -7,10 +7,15 @@ public class KunaiDamageScript : MonoBehaviour
 
     public Enemy enemy;
     public bool damaged;
+    private AudioSource audioSource;
+    public AudioClip hitWall;
+    public AudioClip hitFlesh;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         damaged = false;
     }
 
@@ -29,7 +34,14 @@ public class KunaiDamageScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             enemy = collision.gameObject.GetComponent<Enemy>();
+            audioSource.clip = hitFlesh;
+            audioSource.Play();
             damaged = true;
+        }
+        else
+        {
+            audioSource.clip = hitWall;
+            audioSource.Play();
         }
     }
 
