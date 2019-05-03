@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class PlayerManager : MonoBehaviour
     public static Transform getPlayerPosition() // change player's pos
     {
         return thisInstance.playerPos.transform;
+    }
+
+    private void Update()
+    {
+        if (KillKitsune.KitsuneIsDead)
+        {
+            KillKitsune.KitsuneIsDead = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
 

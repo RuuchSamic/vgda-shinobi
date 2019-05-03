@@ -11,6 +11,7 @@ TagManager:
   - EnemyAttack
   - Detection
   - DeadEnemy
+  - BearAttack
   layers:
   - Default
   - TransparentFX

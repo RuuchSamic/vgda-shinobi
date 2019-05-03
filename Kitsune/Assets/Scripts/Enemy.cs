@@ -139,14 +139,17 @@ public class Enemy : MonoBehaviour
         else if (state == 1)
         {
 
-            
+            anim.SetBool("isFollowing", false);
+            anim.SetBool("isPatrolling", false);
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isAttacking", true);
 
             //if player in attack range, attack player
             if (inAttackRange && groundInfo.collider == true)
             {
 
-                gameObject.tag = "BearAttack";
-                Debug.Log("IM ATTACKING RN");
+                //gameObject.tag = "BearAttack";
+                Debug.Log("IM ATTACKING RN 1");
 
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isFollowing", false);
@@ -156,7 +159,9 @@ public class Enemy : MonoBehaviour
 
             if (inAttackRange && groundInfo.collider == false)
             {
-                Debug.Log("IM ATTACKING RN");
+                Debug.Log("IM ATTACKING RN 2");
+
+                //gameObject.tag = "BearAttack";
 
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isFollowing", false);
@@ -168,8 +173,10 @@ public class Enemy : MonoBehaviour
             else if (!inAttackRange && seesPlayer)
             {
                 anim.SetBool("isFollowing", true);
+                anim.SetBool("isPatrolling", false);
                 anim.SetBool("isAttacking", false);
                 state = 3;
+                Debug.Log("!inAttackRang && seesPlayer");
             }
             else if (inAttackRange && groundInfo.collider == false)
             {
@@ -177,12 +184,14 @@ public class Enemy : MonoBehaviour
                 anim.SetBool("isFollowing", false);
                 anim.SetBool("seesLedge", true);
                 anim.SetBool("isPatrolling", false);
+                Debug.Log("inAttackRange && groundInfo.collider == false");
             }
             else
             {
                 anim.SetBool("isPatrolling", true);
                 anim.SetBool("isAttacking", false);
                 state = 2;
+                Debug.Log("final else");
             }
         }
 
@@ -262,7 +271,11 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("im touching u");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            anim.SetBool("animInAtkRange", true);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Animator otherAnim = other.gameObject.GetComponent<Animator>();
+            otherAnim.SetTrigger("PlayerDeath");
+            //Destroy(other.gameObject, otherAnim.GetCurrentAnimatorStateInfo(0).length);
         }
     }
 
@@ -288,15 +301,11 @@ public class Enemy : MonoBehaviour
         //Destroy(gameObject.GetComponent<SpriteRenderer>());
         anim.SetBool("isPatrolling", false);
         enemyMovement.canWalk = false;
-        gameObject.tag = "DeadEnemy";
+        //gameObject.tag = "DeadEnemy";
         //Destroy(gameObject, 0.4f);
         
     }
 
-    //void enemyMoveForwardOneUnit()
-    //{
-    //    this.transform.Translate(Vector2.right * speed * Time.deltaTime);
-    //}
 
 
 }

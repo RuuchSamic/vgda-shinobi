@@ -13,6 +13,7 @@ public class EnemyAttackRange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class EnemyAttackRange : MonoBehaviour
         if (playerInfo.collider == true)
         {
             Enemy.inAttackRange = true;
+            anim.SetBool("animInAtkRange", true);
 
             Debug.Log("im gonna atk u");
 
@@ -30,6 +32,7 @@ public class EnemyAttackRange : MonoBehaviour
         else
         {
             Enemy.inAttackRange = false;
+            anim.SetBool("animInAtkRange", false);
             Debug.Log("i can't atk u");
         }
 
