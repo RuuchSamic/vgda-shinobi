@@ -20,6 +20,12 @@ public class MenuBehavior : MonoBehaviour
         Application.Quit();
     }
 
+    public void Credits()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Credits");
+    }
+
     public void MoveShurikenSelector(RectTransform buttonPosition)
     {
 

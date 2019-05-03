@@ -33,17 +33,17 @@ public class ThrowMechanic : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-       Velocity = Projectile.svelocity;
+       Velocity = KunaiProjectile.svelocity;
     }
     void Update()
     {
-        if (Input.GetKeyDown("1") == true)
+        if (Input.GetKeyDown("2") == true)
         {
             projectile = weapon1;
             Velocity = Projectile.svelocity;
         }
 
-        if (Input.GetKeyDown("2") == true)
+        if (Input.GetKeyDown("1") == true)
         {
             projectile = weapon2;
             Velocity = KunaiProjectile.svelocity;  

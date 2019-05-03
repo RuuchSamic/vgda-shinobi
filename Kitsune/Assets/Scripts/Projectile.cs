@@ -36,6 +36,8 @@ public class Projectile : MonoBehaviour {
         if(col.gameObject.tag == "Enemy")
         {
             //transform.parent.localScale.Set(transform.parent.localScale.x / col.transform.lossyScale.x, transform.parent.localScale.y / col.transform.lossyScale.y, transform.parent.localScale.z / col.transform.lossyScale.z);
+            Destroy(gameObject.GetComponent<Rigidbody2D>());
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
             transform.parent = col.transform;
         }
         else
