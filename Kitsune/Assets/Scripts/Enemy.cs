@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public EnemyAttackMovement attackMovement;
     private PolygonCollider2D bearCollider;
     private AudioSource audioSource;
+    public AudioClip KitsuneDeathCry;
 
     public AudioClip roar;
 
@@ -286,6 +287,7 @@ public class Enemy : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Animator otherAnim = other.gameObject.GetComponent<Animator>();
             otherAnim.SetTrigger("PlayerDeath");
+            audioSource.PlayOneShot(KitsuneDeathCry, 1.0f);
             //Destroy(other.gameObject, otherAnim.GetCurrentAnimatorStateInfo(0).length);
         }
     }
