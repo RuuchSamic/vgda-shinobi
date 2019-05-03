@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public EnemyIdleMovement idleMovement;
     public EnemyFollowMovement followMovement;
     public EnemyAttackMovement attackMovement;
+    private PolygonCollider2D bearCollider;
 
     private bool movingRight = true;
     [SerializeField] private LayerMask m_CollideWith;
@@ -34,7 +35,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 20;
+        bearCollider = GetComponent<PolygonCollider2D>();
+        health = 15;
         enemyMovement = GetComponent<EnemyMovement>();
         idleMovement = GetComponent<EnemyIdleMovement>();
         followMovement = GetComponent<EnemyFollowMovement>();
@@ -64,7 +66,12 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            killEnemy();
+            anim.SetBool("isDying", true);
+            anim.SetBool("isIdle", true);
+            anim.SetBool("isPatrolling", false);
+            state = 0;
+            enemyMovement.canWalk = false;
+            //killEnemy();
         }
 
         airInfo = Physics2D.Raycast(InAirCheck.position, Vector2.down, 1, m_CollideWith);
@@ -93,27 +100,33 @@ public class Enemy : MonoBehaviour
         //if idle
         if (state == 0)
             {
+
+            if (anim.GetBool("isDying") || health == 0)
+            {
+                killEnemy();
+            }
+
             //enemyMovement.canWalk = false;
-                if (anim.GetBool("inAir"))
+                if (anim.GetBool("inAir") && health > 0)
             {
                 anim.SetBool("isPatrolling", false);
             }
                 
                 // while (seesPlayer && no ledge) go to follow state
-                if (seesPlayer && groundInfo.collider == true)
+                if (seesPlayer && groundInfo.collider == true && health > 0)
                 {
                     state = 3;
                     anim.SetBool("isFollowing", true);
                     anim.SetBool("isIdle", false);
                     //when in atk range, change state to == 1
                 }
-                if (seesPlayer && groundInfo.collider == false)
+                if (seesPlayer && groundInfo.collider == false && health > 0)
             {
                 anim.SetBool("isFollowing", false);
                 anim.SetBool("isIdle", true);
             }
                 //if the player is not in sight of the enemy, have enemy patrol
-                else if (!seesPlayer && (airInfo.collider == true))
+                else if (!seesPlayer && (airInfo.collider == true) && health > 0)
                 {
                     anim.SetBool("isFollowing", false);
                     anim.SetBool("isIdle", false);
@@ -125,18 +138,45 @@ public class Enemy : MonoBehaviour
         // TO DO: if atk 
         else if (state == 1)
         {
+
+            
+
             //if player in attack range, attack player
-            if (inAttackRange)
+            if (inAttackRange && groundInfo.collider == true)
             {
+
+                gameObject.tag = "BearAttack";
+                Debug.Log("IM ATTACKING RN");
+
                 anim.SetBool("isAttacking", true);
-                state = 1;
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isPatrolling", false);
+                enemyMovement.canWalk = false;
             }
+
+            if (inAttackRange && groundInfo.collider == false)
+            {
+                Debug.Log("IM ATTACKING RN");
+
+                anim.SetBool("isAttacking", true);
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("isPatrolling", false);
+                enemyMovement.canWalk = false;
+            }
+
             //if player not in attack range, switch to follow if seesPlayer == true or patrol if !seesPlayer
             else if (!inAttackRange && seesPlayer)
             {
                 anim.SetBool("isFollowing", true);
                 anim.SetBool("isAttacking", false);
                 state = 3;
+            }
+            else if (inAttackRange && groundInfo.collider == false)
+            {
+                anim.SetBool("isIdle", true);
+                anim.SetBool("isFollowing", false);
+                anim.SetBool("seesLedge", true);
+                anim.SetBool("isPatrolling", false);
             }
             else
             {
@@ -244,9 +284,12 @@ public class Enemy : MonoBehaviour
 
     void killEnemy()
     {
-      
-        Destroy(gameObject.GetComponent<SpriteRenderer>());
-        Destroy(gameObject);
+
+        //Destroy(gameObject.GetComponent<SpriteRenderer>());
+        anim.SetBool("isPatrolling", false);
+        enemyMovement.canWalk = false;
+        gameObject.tag = "DeadEnemy";
+        //Destroy(gameObject, 0.4f);
         
     }
 

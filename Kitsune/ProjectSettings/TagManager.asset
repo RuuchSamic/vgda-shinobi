@@ -10,6 +10,7 @@ TagManager:
   - Torii
   - EnemyAttack
   - Detection
+  - DeadEnemy
   layers:
   - Default
   - TransparentFX
