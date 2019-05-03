@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 8980ad1794011410ab7d23ad772c9e92
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: KitsuneInvisibleArmSpriteSheet_0
+    21300002: KitsuneInvisibleArmSpriteSheet_1
+    21300004: KitsuneInvisibleArmSpriteSheet_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -93,7 +96,67 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KitsuneInvisibleArmSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 34
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddae4637e4308b42a61298da3c11b31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitsuneInvisibleArmSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 36
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff524f1165af174ba4f5e5df06c06f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KitsuneInvisibleArmSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 32
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ee31bd254107a4a9d16b9974dc5fff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

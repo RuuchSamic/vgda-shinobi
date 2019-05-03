@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kenny's scene.unity
     guid: 88272ab45659b4d4cb5bfb16cca4f929
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/levelOneTutorial.unity
     guid: 180f9021b3796a44fa9b0307a00ff1af
   - enabled: 1
     path: Assets/Scenes/tutorialDesign.unity
     guid: ee73a3a23539fc74d9d542dbdb491771
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MarcusPlayground.unity
     guid: 524eb110a43f9974a80766295800cc6f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 39cf15626cddbba469c60ddb1f3e9114
   m_configObjects: {}

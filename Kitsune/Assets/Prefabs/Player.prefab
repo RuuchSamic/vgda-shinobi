@@ -437,8 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  projectile: {fileID: 2206010181182511470, guid: deb287a30ae07474983f5e81a67f0219,
-    type: 3}
+  projectile: {fileID: 1752887594595040, guid: a654903184f8fd746be339197b6e7728, type: 3}
   weapon1: {fileID: 2206010181182511470, guid: deb287a30ae07474983f5e81a67f0219, type: 3}
   weapon2: {fileID: 1752887594595040, guid: a654903184f8fd746be339197b6e7728, type: 3}
   weapon3: {fileID: 6501484224632479577, guid: 21fe2d695437b1f4facd98f92ece8af5, type: 3}
